@@ -1,0 +1,31 @@
+h3{
+    margin: 40px;
+}
+hr{
+    width: 50%
+}
+.post{
+    float: left;
+    width: 60%;
+   background-color: #f7f7f7 ;
+  margin: 5px ;
+  padding: 5px ;
+  border-radius: 4px ;
+  
+}
+
+ul{
+     text-decoration: none;  
+}
+li{
+
+     text-align: none;
+     display: block;
+}
+input{
+    width: 60%;
+}
+textArea{
+   width: 60%; 
+   height: 130px;
+}
