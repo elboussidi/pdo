@@ -8,8 +8,10 @@ if(isset($_GET['id'])){
   
   if($stmt){
       echo 'delet successfuly';
+     
   } else {
       echo 'error';
   }
     
 }
+ header("location:./index.php");

@@ -23,13 +23,13 @@ $majid= $stmt->fetch();
   <hr style="width: 50%" >
   
 <div class="post">
-    <h4> update data</h4><BR>
+    <h4> update data</h4><br>
     <form method="POST">
-        <input name="title" type="text" placeholder="YOUR title" value="<?php echo $majid['title'];  ?>" ><br><br>
+        <input name="title"  class="form-control" type="text" placeholder="YOUR title" value="<?php echo $majid['title'];  ?>" ><br><br>
         
-        <textarea name="body" placeholder="body"> <?php echo $majid['body'];?> </textarea>
+        <textarea name="body" style="height: 150px;" class="form-control" placeholder="body"> <?php echo $majid['body'];?> </textarea>
         <br><br>
-        <input name="update" type="submit" value="update">
+        <input name="update" style="margin-left: 20%;" class="alert alert-info" type="submit" value="update">
     </form>
 
 <?php
@@ -60,13 +60,17 @@ if(isset($_POST['update'])){
     ]);
      
      if($stmt){
-         echo 'data has been update';
+         echo ' <div class="alert alert-success">data has been insert </div>';
      }
     } 
 }
 
 ?><br><br>
-    <div class="alert alert-danger"><?php echo $er;?> </div>
+    <?php 
+if(!empty($er)){
+    echo ' <div class="alert alert-danger">'. $er.' </div>';
+}
+?>
 </body>
 </html>
 

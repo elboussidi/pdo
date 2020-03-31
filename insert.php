@@ -18,11 +18,11 @@
 <div class="post">
     <h4> inset new data</h4><BR>
     <form method="POST">
-        <input name="title" type="text" placeholder="YOUR title" ><br><br>
+        <input name="title" type="text" placeholder="YOUR title"  class="form-control" ><br><br>
         
-        <textarea name="body" placeholder="body" ></textarea>
+        <textarea name="body" style="height: 150px;" placeholder="body"   class="form-control"></textarea>
         <br><br>
-         <input name="submit" type="submit" value="send">
+         <input name="submit" class="alert alert-info" style="margin-left: 20%;" type="submit" value="send">
     </form>
 
 <?php
@@ -49,13 +49,19 @@ if(isset($_POST['submit'])){
     ]);
      
      if($stmt){
-         echo 'data has been insert';
+       
+          echo ' <div class="alert alert-success">data has been insert </div>';
      }
     } 
 }
 ?>
 <br><br>
-    <div class="alert alert-danger"><?php echo $er;?> </div>
+<?php 
+if(!empty($er)){
+    echo ' <div class="alert alert-danger">'. $er.' </div>';
+}
+?>
+    
 
 </body>
 </html>

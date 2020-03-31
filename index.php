@@ -18,16 +18,16 @@ $pos= $stmt->fetchAll();
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
 
 </head>
-<body>
+<body style="margin-left: 20%;">
  <center> <h3><a href="http://localhost/pdo"> bonjour</a></h3></center>  
 
   <hr style="width: 50%" >
- <a href="insert.php"> <button class="btn btn-success" style="margin-left: 40px;">insert data</button></a><br>
-<div class="post">
+  <a href="insert.php"> <button class="btn btn-success " style="margin-left: 40px;">insert data</button></a><br><br>
+<div class="post" style="padding-left:5%;">
     <?php 
     foreach ($pos as $po){
-        echo " <h4>" .$po['title']."</h4><BR>";
-    echo "<p>" .$po['body']."</p> ";
+        echo " <h4 style='margin-left: 30%;'>" .$po['title']."</h4><BR>";
+    echo "<p style='margin-left: 20%;'>" .$po['body']."</p> ";
     
     echo '<a class="btn btn-danger" href=delete.php?id='.$po["id"].'>delete</a> ';
     echo '<a class="btn btn-info" href=update.php?id='.$po["id"].'>edit</a><hr> ';
