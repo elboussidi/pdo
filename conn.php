@@ -1,9 +1,9 @@
 <?php
 
 $host = "localhost";
-$db="tce";
-$user="majid";
-$pass="CHICHAOUA";
+$db="oop";
+$user="root";
+$pass="";
 
 try {
    

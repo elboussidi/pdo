@@ -26,6 +26,10 @@
     </form>
 
 <?php
+
+include ('class.php') ;
+$insert = new blog($conn) ; 
+
 $er="";
 if(isset($_POST['submit'])){
     
@@ -38,20 +42,14 @@ if(isset($_POST['submit'])){
         $er="filed empty";
     } else {
         
-    // $stmt= $conn->prepare('INSERT INTO `sold` (`id`, `title'`, body`) VALUES (?, ?, ?)');
-     //$stmt -> execute([null,$title,$body]);
-     
-      $stmt= $conn->prepare('INSERT INTO `post` (`id`, `title`, `body`) VALUES (:id, :title, :body)');
-     $stmt -> execute([
-            'id' => null,
-            'title' =>$title,
-            'body' => $body 
-    ]);
-     
-     if($stmt){
+ if($insert->insert($title,$body)){
        
           echo ' <div class="alert alert-success">data has been insert </div>';
      }
+     ;  
+ 
+     
+    
     } 
 }
 ?>

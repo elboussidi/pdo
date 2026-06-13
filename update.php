@@ -1,9 +1,10 @@
 <?php require './conn.php'; 
-$id=$_GET['id'];
-    $stmt=$conn->prepare('SELECT * FROM `post` WHERE id=:id '); // :id    ['id' => $id or ] or array($id)
-$stmt->execute(['id' => $id]);                                   //  ?       [$id ]
-$majid= $stmt->fetch();
+include ('class.php') ; 
+$data = new blog($conn) ;
 
+$id=$_GET['id'];
+
+$majid = $data->find($id) ;
    
 ?>
 <!DOCTYPE html>
@@ -49,17 +50,11 @@ if(isset($_POST['update'])){
      //$stmt -> execute([null,$title,$body]);
  
         
+    
         
-        
-      $stmt= $conn->prepare('UPDATE `post` SET `title`=:title,`body`=:body  WHERE id=:id');
-     $stmt -> execute([
-            
-            'title' =>$title,
-            'body' => $body,
-             'id' => $id
-    ]);
+
      
-     if($stmt){
+     if($data->update($id , $title , $body)){
          echo ' <div class="alert alert-success">data has been insert </div>';
      }
     } 

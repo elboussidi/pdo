@@ -1,10 +1,9 @@
-<?php require './conn.php'; ?>
-<?php 
-$id=1;
-$stmt=$conn->prepare('SELECT * FROM `post`'); // :id    ['id' => $id or ] or array($id)
-$stmt->execute();                                   //  ?       [$id ]
-$pos= $stmt->fetchAll();
+<?php require './conn.php'; 
+include ('class.php') ;
 
+$post = new blog($conn) ; 
+
+$pos = $post->sho() ;
      
 ?>
 <!DOCTYPE html>
